@@ -48,7 +48,7 @@ export class App extends Component {
   }
   render () {
     const {isLoading, date, isError, messageEror} = this.state;
-console.log(date)
+
     return (
       <div>
 
@@ -57,6 +57,7 @@ console.log(date)
           : <Searchbar changeValueSab={this.changeValueSab} />}
         <ImageGallery object={date} changePage={this.changePage} />
         {isError ? <p class="error">{messageEror}</p> : null}
+        {date.length !== 0 ? <Button pagChange={this.changePage} /> : null}
       </div>
     );
   }

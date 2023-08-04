@@ -24,13 +24,13 @@ export class ImageGallery extends Component {
   };
   render () {
     const {urlLargeImage, isModal} = this.state;
-    const {object, changePage} = this.props;
+    const {object} = this.props;
     return (
       <div>
         <ul className={css.gallery} onClick={this.onClicImage}>
           <ImageGalleryItem option={object} />
         </ul>
-        {object.length !== 0 ? <Button pagChange={changePage} /> : null}
+       
         {isModal
           ? <Modal url={urlLargeImage} clouseFanction={this.changeIsModal} />
           : null}
